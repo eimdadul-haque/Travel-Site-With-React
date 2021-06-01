@@ -26,9 +26,9 @@ export default function Trending_Bangladesh_Destination(props) {
                                 <Card style={{ width:'100%' }}>
                                     <Card.Img variant="top" src={data.image} />
                                     <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
+                                    <Card.Title>{data.title}</Card.Title>
                                         <Card.Text>
-                                            Some quick example .
+                                            {data.text}
                                         </Card.Text>
                                         <Button variant="outline-warning">Details</Button>
                                     </Card.Body>
