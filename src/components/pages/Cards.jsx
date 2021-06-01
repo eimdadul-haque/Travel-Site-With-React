@@ -12,7 +12,7 @@ export default function Cards(props) {
                 <Row>
                     {
                         [...Array(parseInt(props.num)).keys()].map((data, index) =>
-                            <Col xs={parseInt(props.xs)} md={parseInt(props.md)} lg={parseInt(props.lg)}>
+                            <Col key={index} xs={parseInt(props.xs)} md={parseInt(props.md)} lg={parseInt(props.lg)}>
                                 <div style={{ marginTop: "20px" }}>
                                     <Card style={{ width: props.width+'rem' }}>
                                         <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/1024px-Andromeda_Galaxy_560mm_FL.jpg" />

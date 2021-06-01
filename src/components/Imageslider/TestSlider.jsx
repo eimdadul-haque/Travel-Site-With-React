@@ -1,24 +1,45 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Carousel } from 'react-bootstrap'
 import "./TestSlider.css"
 
 export default function TestSlider() {
+
+  const [data, setdata] = useState([])
+
+  useEffect(() => {
+    axios.get("http://kmemon.pythonanywhere.com/api/homepage/sliders/")
+      .then((res) => {
+        setdata(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err, "===Error");
+      })
+  }, [])
+
   return (
     <div >
       <Carousel fade>
-        <Carousel.Item interval={1000}>
-          <img 
-            className="d-block w-100 slider-img"
-            src="http://2.bp.blogspot.com/-e5tO5vpVsk4/VmmyesKMN3I/AAAAAAAAw6s/ktkh9g4bMHc/s640/Cat%2527s-Eye-Nebula-Wallpaper-HD-03.jpg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={1000}>
-          <img 
+        {
+          data.map((data, index) => {
+            return (
+              <Carousel.Item key={index} interval={1000}>
+                <img
+                  className="d-block w-100 slider-img"
+                  src={data.image}
+                  alt="First slide"
+                />
+                <Carousel.Caption>
+                  <h3>{data.title}</h3>
+                  <p>{data.text}</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            )
+          })
+        }
+        {/* <Carousel.Item interval={1000}>
+          <img
             className="d-block w-100 slider-img"
             src="https://petapixel.com/assets/uploads/2021/04/New-Photo-of-the-Veil-Nebula-Shows-Incredible-Detail-800x420.jpg"
             alt="Second slide"
@@ -30,7 +51,7 @@ export default function TestSlider() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={1000}>
-          <img 
+          <img
             className="d-block w-100 slider-img"
             src="https://mk0astronomynow9oh6g.kinstacdn.com/wp-content/uploads/2018/12/122918_helix2.jpg"
             alt="Third slide"
@@ -40,7 +61,7 @@ export default function TestSlider() {
             <h3>Third slide label</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
     </div>
   )

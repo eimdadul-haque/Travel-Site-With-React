@@ -3,9 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Topbar from './components/Topbar/Topbar'
 import Navber from './components/Navber/Navber'
 import TestSlider from './components/Imageslider/TestSlider'
-import Cards from './components/Card/Cards'
+import Cards from './components/pages/Cards'
 import Title from "./components/Title/Title"
 import About from "./components/About/About"
+import Student_Package from './components/pages/Student_Package'
+import Couple_Package from './components/pages/Couple_Package'
+import Most_Populer_Package from './components/pages/Most_Populer_Package'
+import Trending_Bangladesh_Destination from './components/pages/Trending_Bangladesh_Destination'
 import { Col, Container, Row } from 'react-bootstrap'
 
 
@@ -24,11 +28,13 @@ function App() {
               <Title title={"Travel With Nebula"} desc={"Abc"} />
               <About />
               <Title title={"Trending Bangladesh Destination"} desc={"Abc"} />
-              <Cards num={6} xs={12} md={6} lg={4} size={22} />
+              <Trending_Bangladesh_Destination />
               <Title title={"Most Populer Package"} desc={"Abc"} />
-              <Cards num={8} xs={12} md={6} lg={3} size={17} />
-              <Title title={" Student Package\Picnic"} desc={"Abc"} />
-              <Cards num={8} xs={12} md={6} lg={3} size={17} />
+              <Most_Populer_Package />
+              <Title title={" Couple Package"} desc={"Abc"} />
+              <Couple_Package />
+              <Title title={" Student Package"} desc={"Abc"} />
+              <Student_Package />
 
             </Container>
           </Route>
