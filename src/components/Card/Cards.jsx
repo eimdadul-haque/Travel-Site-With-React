@@ -1,31 +1,34 @@
 import React from 'react'
-import { Card, Button, Col } from "react-bootstrap"
+import { Card, Button,Row, Col, Container } from "react-bootstrap"
+import "./Card.css"
 
-export default function Cards() {
+export default function Cards(props) {
 
-    var a = [1, 2, 3, 4, 2, 3, 4]
+
 
 
     return (
         <>
-            {
-                a.map((data, index) =>
-                    <Col md={3}>
-                        <div style={{ marginTop: "20px" }}>
-                            <Card style={{ width: '17rem' }}>
-                                <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/1024px-Andromeda_Galaxy_560mm_FL.jpg" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example .
-                                    </Card.Text>
-                                    <Button variant="info">Details</Button>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </Col>
-                )
-            }
+                <Row>
+                    {
+                        [...Array(parseInt(props.num)).keys()].map((data, index) =>
+                            <Col xs={parseInt(props.xs)} md={parseInt(props.md)} lg={parseInt(props.lg)}>
+                                <div style={{ marginTop: "20px" }}>
+                                    <Card style={{ width: props.width+'rem' }}>
+                                        <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/1024px-Andromeda_Galaxy_560mm_FL.jpg" />
+                                        <Card.Body>
+                                            <Card.Title>Card Title</Card.Title>
+                                            <Card.Text>
+                                                Some quick example .
+                                            </Card.Text>
+                                            <Button variant="outline-warning">Details</Button>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            </Col>
+                        )
+                    }
+                </Row>
         </>
     )
 }
