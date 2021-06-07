@@ -1,5 +1,6 @@
 
 import axios from 'axios'
+import Title from '../Title/Title'
 import React, { useEffect, useState } from 'react'
 import { Card, Button, Row, Col, Container } from "react-bootstrap"
 import "./Card.css"
@@ -18,7 +19,8 @@ export default function Student_Package() {
     }, [])
 
     return (
-        <>
+        <Container>
+            <Title title="Student Package" desc="abc"/>
             <Row>
                 {
                     data.map((data, index) =>
@@ -39,6 +41,6 @@ export default function Student_Package() {
                     )
                 }
             </Row>
-        </>
+        </Container>
     )
 }

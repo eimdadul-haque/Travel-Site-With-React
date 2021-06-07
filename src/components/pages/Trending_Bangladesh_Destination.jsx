@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Title from '../Title/Title'
 import { Card, Button, Row, Col, Container } from "react-bootstrap"
 import "./Card.css"
 
@@ -17,7 +18,8 @@ export default function Trending_Bangladesh_Destination(props) {
     }, [])
 
     return (
-        <>
+        <Container>
+            <Title title="Trending Bangladesh Destination" desc="abc"/>
             <Row className="">
                 {
                     data.map((data, index) =>
@@ -38,7 +40,7 @@ export default function Trending_Bangladesh_Destination(props) {
                     )
                 }
             </Row>
-        </>
+        </Container>
     )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Navber.css"
 import { Container, Navbar, Nav, NavDropdown, Form, Button, FormControl } from "react-bootstrap"
-
+import "bootstrap/dist/css/bootstrap.css"
 export default function Navber() {
     return (
 

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Title from '../Title/Title'
 import React, { useEffect, useState } from 'react'
 import { Card, Button, Row, Col, Container } from "react-bootstrap"
 import "./Card.css"
@@ -17,7 +18,8 @@ export default function Most_Populer_Package() {
     }, [])
 
     return (
-        <>
+        <Container>
+            <Title title="Most Populer Package" desc="abc"/>
             <Row>
                 {
                     data.map((data, index) =>
@@ -38,6 +40,6 @@ export default function Most_Populer_Package() {
                     )
                 }
             </Row>
-        </>
+        </Container>
     )
 }
