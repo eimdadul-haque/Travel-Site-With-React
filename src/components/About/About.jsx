@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.css"
 export default function About() {
     return (
         <Container>
-            <Title title="ABC" desc="abc"/>
+            <Title title="Travel With Nebula" desc="abc"/>
             <Row className="mt-3">
                 <Col  xs={12} md={12} lg={6}>
                     <span >
