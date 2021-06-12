@@ -5,6 +5,7 @@ import Navbar from "./components/Navber/Navber"
 import CardSlider from "./components/CardSlider/CardSlider"
 import Imageslider from "./components/Imageslider/Imageslider"
 import Comment from "./components/Comment/PauseOnHover"
+import Details from "./components/pages/Details/Details"
 import Topbar from "./components/Topbar/Topbar"
 import Couple_Package from "./components/pages/Couple_Package"
 import Student_Package from "./components/pages/Student_Package"
@@ -16,10 +17,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 function App() {
   return (
     <Router>
+      <Topbar />
+      <Navbar />
       <Switch>
         <Route path="/" exact>
-          <Topbar />
-          <Navbar />
           <Imageslider />
           <About />
           <Trending_Bangladesh_Destination />
@@ -29,6 +30,9 @@ function App() {
           <CardSlider />
           <Comment />
           <Footer />
+        </Route>
+        <Route path="/details" exact>
+          <Details />
         </Route>
       </Switch>
     </Router>
