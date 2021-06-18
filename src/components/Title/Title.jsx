@@ -24,7 +24,7 @@ export default function Title(props) {
                 </Col>
                 <Col lg={6}>
                     <div className=" d-flex justify-content-end mt-5">
-                        <Button onClick={() => details()} variant="warning">Details</Button>
+                        <Button onClick={() => details()} variant="outline-warning">Details</Button>
                     </div>
                 </Col>
             </Row>

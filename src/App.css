@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.Contact-Us{
+  height: 10px;
+  width: 150px;
+  /* margin: auto; */
+  /* margin-top: 30%; */
+  position: fixed;
+  right: 0%;
+  /* top: 0px; */
+  bottom: 15%;
+  border-radius: 50%;
+}

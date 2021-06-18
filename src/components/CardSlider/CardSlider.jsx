@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-import { Card } from "react-bootstrap"
+import { Card, Row, Col } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.css"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -12,7 +12,7 @@ export default function CardSlider() {
 
     const update = () => {
 
-        if (window.innerWidth <= 400 ) {
+        if (window.innerWidth <= 400) {
             setstate(2)
         }
     }
@@ -34,40 +34,44 @@ export default function CardSlider() {
     }
 
     return (
-        <div className=" mt-3 overflow-hidden" style={{ width: "100%" }}>
-            <Slider {...settings}>
-                <div >
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
-                    </Card>
+        <Row>
+            <Col lg={12} md={12} xs={12}>
+                <div className=" mt-3 " style={{ width: "100%" }}>
+                    <Slider {...settings}>
+                        <div >
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
+                            </Card>
+                        </div>
+                        <div >
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
+                            </Card>
+                        </div>
+                        <div >
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
+                            </Card>
+                        </div>
+                        <div >
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
+                            </Card>
+                        </div>
+                        <div >
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
+                            </Card>
+                        </div>
+                        <div >
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
+                            </Card>
+                        </div>
+                    </Slider>
                 </div>
-                <div >
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
-                    </Card>
-                </div>
-                <div >
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
-                    </Card>
-                </div>
-                <div >
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
-                    </Card>
-                </div>
-                <div >
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
-                    </Card>
-                </div>
-                <div >
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Black-Hole-Background-Download.jpg" />
-                    </Card>
-                </div>
-            </Slider>
-        </div>
+            </Col>
+        </Row>
     );
 
 }

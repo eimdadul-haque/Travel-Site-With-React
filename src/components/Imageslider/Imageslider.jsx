@@ -21,11 +21,11 @@ export default function Imageslider() {
 
   return (
     <div >
-      <Carousel fade>
+      <Carousel >
         {
           data.map((data, index) => {
             return (
-              <Carousel.Item key={index} interval={1000}>
+              <Carousel.Item key={index} interval={3000}>
                 <img
                   className="d-block w-100 slider-img"
                   src={data.image}

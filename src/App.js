@@ -1,16 +1,12 @@
 import './App.css';
+import ButtonContact from "./pages/Contact/ButtonContact"
 import "bootstrap/dist/css/bootstrap.min.css"
-import About from "./components/About/About"
 import Navbar from "./components/Navber/Navber"
-import CardSlider from "./components/CardSlider/CardSlider"
-import Imageslider from "./components/Imageslider/Imageslider"
-import Comment from "./components/Comment/PauseOnHover"
 import Details from "./components/pages/Details/Details"
+import Contact_Us from "./pages/Contact/Contact_Us"
 import Topbar from "./components/Topbar/Topbar"
-import Couple_Package from "./components/pages/Couple_Package"
-import Student_Package from "./components/pages/Student_Package"
-import Trending_Bangladesh_Destination from "./components/pages/Trending_Bangladesh_Destination"
-import Most_Populer_Package from "./components/pages/Most_Populer_Package"
+import Search from "./pages/Search/Search"
+import Home from "./pages/Home/Home"
 import Footer from "./components/Footer/Footer"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
@@ -21,20 +17,24 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" exact>
-          <Imageslider />
-          <About />
-          <Trending_Bangladesh_Destination />
-          <Most_Populer_Package />
-          <Student_Package />
-          <Couple_Package />
-          <CardSlider />
-          <Comment />
-          <Footer />
+          <Home />
+          <div className="Contact-Us">
+            <ButtonContact />
+          </div>
         </Route>
         <Route path="/details" exact>
           <Details />
+          <Footer />
+        </Route>
+        <Route path="/contact" exact>
+          <Contact_Us />
+          <Footer />
+        </Route>
+        <Route path="/search/:query" exact>
+          <Search />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
