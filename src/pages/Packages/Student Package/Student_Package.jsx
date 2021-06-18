@@ -1,13 +1,13 @@
 import axios from 'axios'
-import Title from '../Title/Title'
+import Title from './../../../components/Title/Title'
 import React, { useEffect, useState } from 'react'
 import { Card, Button, Row, Col, Container } from "react-bootstrap"
-import "./Card.css"
+import { useHistory } from 'react-router-dom'
+export default function Student_Package(props) {
 
-export default function Couple_Package() {
     const [data, setdata] = useState([])
     useEffect(() => {
-        axios.get("http://kmemon.pythonanywhere.com/api/homepage/couplecards/")
+        axios.get("http://kmemon.pythonanywhere.com/api/homepage/mostpopularcards/")
             .then((res) => {
                 setdata(res.data);
             })
@@ -16,13 +16,18 @@ export default function Couple_Package() {
             })
     }, [])
 
+    const history = useHistory()
+    const Details = () => {
+        history.push("/student-package")
+    }
+
     return (
         <Container>
-            <Title title="Couple Package" desc="abc" />
+           <Title title={props.title} desc={props.desc} button={props.button}  Details={() => Details()} />
             <Row>
                 {
                     data.map((data, index) =>
-                        <Col key={index} xs={12} md={6} lg={4}>
+                        <Col key={index} xs={12} md={6} lg={3} >
                             <div style={{ marginTop: "20px" }}>
                                 <Card style={{ width: '100%' }}>
                                     <Card.Img variant="top" src={data.image} />

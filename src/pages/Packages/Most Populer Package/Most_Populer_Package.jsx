@@ -1,11 +1,10 @@
-
 import axios from 'axios'
-import Title from '../Title/Title'
+import Title from './../../../components/Title/Title'
 import React, { useEffect, useState } from 'react'
 import { Card, Button, Row, Col, Container } from "react-bootstrap"
-import "./Card.css"
+import { useHistory } from 'react-router-dom'
 
-export default function Student_Package() {
+export default function Most_Populer_Package(props) {
 
     const [data, setdata] = useState([])
     useEffect(() => {
@@ -18,9 +17,14 @@ export default function Student_Package() {
             })
     }, [])
 
+    const history = useHistory()
+    const Details = () => {
+        history.push("/most-populer-package")
+    }
+
     return (
         <Container>
-            <Title title="Student Package" desc="abc"/>
+            <Title title={props.title} desc={props.desc} button={props.button}  Details={() => Details()} />
             <Row>
                 {
                     data.map((data, index) =>
@@ -29,7 +33,7 @@ export default function Student_Package() {
                                 <Card style={{ width: '100%' }}>
                                     <Card.Img variant="top" src={data.image} />
                                     <Card.Body>
-                                    <Card.Title>{data.title}</Card.Title>
+                                        <Card.Title>{data.title}</Card.Title>
                                         <Card.Text>
                                             {data.text}
                                         </Card.Text>

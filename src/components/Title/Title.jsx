@@ -1,20 +1,15 @@
 import React from 'react'
 import "./Title.css"
-import {useHistory} from "react-router-dom"
-import { Container, Row, Col, Button } from "react-bootstrap"
-import Details from '../pages/Details/Details'
+import { useHistory } from "react-router-dom"
+import { Row, Col, Button } from "react-bootstrap"
 
 export default function Title(props) {
     const history = useHistory()
 
-    const details = () => {
-        history.push("/details")
-    }
-    
     return (
         <>
 
-            <Row>
+            {props.button == true ? <Row>
                 <Col lg={6}>
                     <div className="d-flex flex-column mt-4">
                         <span className="h2">{props.title}</span>
@@ -24,10 +19,16 @@ export default function Title(props) {
                 </Col>
                 <Col lg={6}>
                     <div className=" d-flex justify-content-end mt-5">
-                        <Button onClick={() => details()} variant="outline-warning">Details</Button>
+                        <Button size="sm" variant="outline-warning" onClick={props.Details}>Details</Button>
                     </div>
                 </Col>
             </Row>
+                :
+                <div className="d-flex flex-column mt-4">
+                    <span className="h2">{props.title}</span>
+                    <span className="h6">{props.desc}</span>
+                    <span className="border border-warning"></span>
+                </div>}
 
         </>
     )

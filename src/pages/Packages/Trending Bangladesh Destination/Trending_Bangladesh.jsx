@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Title from '../Title/Title'
+import Title from './../../../components/Title/Title'
 import { Card, Button, Row, Col, Container } from "react-bootstrap"
-import "./Card.css"
+import { useHistory } from 'react-router-dom'
 
-export default function Trending_Bangladesh_Destination(props) {
+export default function Trending_Bangladesh(props) {
 
     const [data, setdata] = useState([])
     useEffect(() => {
@@ -16,11 +16,15 @@ export default function Trending_Bangladesh_Destination(props) {
                 console.log(err, "===Error");
             })
     }, [])
+    const history = useHistory()
+    const Details = () => {
+        history.push("/trending-bangladesh-destination")
+    }
 
     return (
         <section id="Trending Destination">
             <Container>
-                <Title title="Trending Bangladesh Destination" desc="abc" />
+            <Title title={props.title} desc={props.desc} button={props.button}  Details={() => Details()} />
                 <Row className="">
                     {
                         data.map((data, index) =>

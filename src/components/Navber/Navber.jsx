@@ -5,14 +5,18 @@ import { Container, Navbar, Nav, NavDropdown, Form, Button, FormControl } from "
 import "bootstrap/dist/css/bootstrap.css"
 export default function Navber() {
 
-    const destination = ["Chittagong", "Bandarban", "Sajek", "Rangamati", "Coxebazar", "Bagherhat"]
+    const destination = ["DHAKA", "RANGPUR", "SYLHET", "RAJSHAHI", "KHULNA", "BARISAL", "CHITTAGONG", "MYMENSINGH"]
     const packages = ["Trending Destination", "Most Populer Package", "Student Package", "Couple Package"]
     const new_offers = ["Offer one", "Offer two", "Offer three"]
 
-    const [Serach, setSerach] = useState("")
+    const [Search, setSearch] = useState("")
     const history = useHistory()
+
     const search = (searchQury) => {
-        history.push(`/search/${searchQury}`)
+        if (searchQury) {
+            console.log(searchQury);
+            history.push(`/search/${searchQury}`)
+        }
     }
 
 
@@ -61,9 +65,9 @@ export default function Navber() {
                             placeholder="Search"
                             className="mr-2"
                             aria-label="Search"
-                            onChange={(e)=>setSerach(e.target.value)}
+                            onChange={(e) => setSearch(e.target.value)}
                         />
-                        <Button onClick={() => search(Serach)} variant="outline-info">Search</Button>
+                        <Button size="sm" onClick={() => search(Search)} variant="outline-info">Search</Button>
                     </Form>
 
                 </Navbar.Collapse>

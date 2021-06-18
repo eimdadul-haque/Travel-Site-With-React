@@ -11,7 +11,7 @@ export default function ButtonContact() {
     }
     return (
         <div>
-            <Button variant="warning" onClick={() => contact()}><Phone /> Contact Us</Button>
+            <Button size="sm" variant="warning" onClick={() => contact()}><Phone /> Contact Us</Button>
         </div>
     )
 }
