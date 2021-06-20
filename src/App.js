@@ -6,6 +6,7 @@ import Contact_Us from "./pages/Contact/Contact_Us"
 import Topbar from "./components/Topbar/Topbar"
 import Search from "./pages/Search/Search"
 import Home from "./pages/Home/Home"
+import Destination from "./pages/Destination/Destination"
 import Footer from "./components/Footer/Footer"
 import New_Offers from "./pages/New Offers/New_Offers"
 import Student_Package from "./pages/Packages/Student Package/Student_Package"
@@ -16,6 +17,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import Page404 from './pages/Page404/Page404';
 
 function App() {
+
   return (
     <>
       <Router>
@@ -32,19 +34,22 @@ function App() {
             <Search />
           </Route>
           <Route path="/trending-bangladesh-destination" exact>
-            <Trending_Bangladesh title="Trending Bangladesh Destination" desc="abc" button={false} />
+            <Trending_Bangladesh title="Trending Bangladesh Destination" desc="CHOOSE YOUR OPTION" button={false} jumbo={true} />
           </Route>
           <Route path="/most-populer-package" exact>
-            <Most_Populer_Package title="Most Populer Package" desc="abc" button={false} />
+            <Most_Populer_Package title="Most Populer Package" desc="CHOOSE YOUR OPTION" button={false} jumbo={true} />
           </Route>
-          <Route path="/student-package" button={false} exact>
-            <Student_Package title="Student Package" desc="abc" button={false} />
+          <Route path="/student-package" exact>
+            <Student_Package title="Student Package" desc="CHOOSE YOUR OPTION" button={false} jumbo={true} />
           </Route>
           <Route path="/couple-package" exact>
-            <Couple_Package title="Couple Package" desc="abc" button={false} />
+            <Couple_Package title="Couple Package" desc="CHOOSE YOUR OPTION" button={false} jumbo={true} />
           </Route>
           <Route path="/new-offers">
             <New_Offers />
+          </Route>
+          <Route path="/destination/:destination">
+            <Destination button={false} title="Destination" desc="CHOOSE YOUR OPTION" jumbo={true}/>
           </Route>
           <Route path="/404" exact>
             <Page404 />

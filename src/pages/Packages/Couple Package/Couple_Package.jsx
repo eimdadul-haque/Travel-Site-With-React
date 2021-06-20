@@ -22,28 +22,37 @@ export default function Couple_Package(props) {
     }
 
     return (
-        <Container className="overflow-hidden">
-            <Title title={props.title} desc={props.desc} button={props.button} Details={() => Details()} />
-            <Row>
-                {
-                    data.map((data, index) =>
-                        <Col key={index} xs={12} md={6} lg={4}>
-                            <div style={{ marginTop: "20px" }}>
-                                <Card style={{ width: '100%' }}>
-                                    <Card.Img variant="top" src={data.image} />
-                                    <Card.Body>
-                                        <Card.Title>{data.title}</Card.Title>
-                                        <Card.Text>
-                                            {data.text}
-                                        </Card.Text>
-                                        <Button variant="outline-warning">Details</Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                        </Col>
-                    )
-                }
-            </Row>
-        </Container>
+        <> 
+            {
+                props.jumbo == true ? <div className="jumbotron">
+                    <div className="container">
+                        <p className="h1"><span className="New"> </span>Couple<span className="Offers"> Package</span></p>
+                    </div>
+                </div> : <></>
+            }
+            <Container className="overflow-hidden">
+                <Title title={props.title} desc={props.desc} button={props.button} Details={() => Details()} />
+                <Row>
+                    {
+                        data.map((data, index) =>
+                            <Col key={index} xs={12} md={6} lg={4}>
+                                <div style={{ marginTop: "20px" }}>
+                                    <Card style={{ width: '100%' }}>
+                                        <Card.Img variant="top" src={data.image} />
+                                        <Card.Body>
+                                            <Card.Title>{data.title}</Card.Title>
+                                            <Card.Text>
+                                                {data.text}
+                                            </Card.Text>
+                                            <Button variant="outline-warning">Details</Button>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            </Col>
+                        )
+                    }
+                </Row>
+            </Container>
+        </>
     )
 }

@@ -37,7 +37,7 @@ export default function Navber() {
                         <NavDropdown title="DESTINATIONS" id="basic-nav-dropdown">
                             {
                                 destination.map((data, index) =>
-                                    <NavDropdown.Item > <Link style={{ textDecoration: "none", color: "black" }} to="/destination" key={index}>{data}</Link></NavDropdown.Item>
+                                    <NavDropdown.Item > <Link style={{ textDecoration: "none", color: "black" }} to={"/destination/" + data.toLowerCase()} key={index}>{data}</Link></NavDropdown.Item>
                                 )
                             }
 
