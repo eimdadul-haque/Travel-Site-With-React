@@ -23,7 +23,7 @@ export default function Most_Populer_Package(props) {
     }
 
     return (
-        <Container>
+        <Container className="overflow-hidden">
             <Title title={props.title} desc={props.desc} button={props.button}  Details={() => Details()} />
             <Row>
                 {

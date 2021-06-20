@@ -13,7 +13,7 @@ import BottomBar from './BottomBar'
 export default function Footer() {
     return (
         <>
-            <div style={{ height: "65vh" }} className="overflow-hidden bg-dark ">
+            <div style={{ height: "65vh" }} className="overflow-hidden bg-dark mt-5">
                 <Container>
                     <Row className="mt-5 " >
 

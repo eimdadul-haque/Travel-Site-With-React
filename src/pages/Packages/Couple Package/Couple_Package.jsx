@@ -22,8 +22,8 @@ export default function Couple_Package(props) {
     }
 
     return (
-        <Container>
-            <Title title={props.title} desc={props.desc} button={props.button}  Details={() => Details()} />
+        <Container className="overflow-hidden">
+            <Title title={props.title} desc={props.desc} button={props.button} Details={() => Details()} />
             <Row>
                 {
                     data.map((data, index) =>

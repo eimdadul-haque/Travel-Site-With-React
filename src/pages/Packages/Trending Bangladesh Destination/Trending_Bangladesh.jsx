@@ -22,9 +22,9 @@ export default function Trending_Bangladesh(props) {
     }
 
     return (
-        <section id="Trending Destination">
+        <section className=" overflow-hidden" id="Trending Destination">
             <Container>
-            <Title title={props.title} desc={props.desc} button={props.button}  Details={() => Details()} />
+                <Title title={props.title} desc={props.desc} button={props.button} Details={() => Details()} />
                 <Row className="">
                     {
                         data.map((data, index) =>

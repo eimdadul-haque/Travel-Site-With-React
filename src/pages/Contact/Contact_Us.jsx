@@ -13,7 +13,7 @@ export default function Contact_Us() {
     const [Message, setMessage] = useState("")
 
     const submit = () => {
-        if (Email != null && Phone != null && Message != null) {
+        if (Email != null && Phone != null && Message != null && Name != null) {
             alert("Hello there...")
         }
     }
@@ -31,7 +31,7 @@ export default function Contact_Us() {
                         <Title title="CONTACT US" desc="Fill The Form" />
                         <section style={{ marginTop: "5vh" }}>
                             <div className="form-group">
-                                <input onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Name" />
+                                <input onChange={(e) => setName(e.target.value)} className="form-control" placeholder="Name" />
                             </div>
                             <div className="form-group">
                                 <input type="email" onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Email ID" />

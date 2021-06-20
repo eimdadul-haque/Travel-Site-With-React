@@ -43,22 +43,22 @@ export default function Navber() {
 
                         </NavDropdown>
                         <NavDropdown title="PACKAGES" id="basic-nav-dropdown">
-                            {
+                            {/* {
                                 packages.map((data, index) =>
                                     <NavDropdown.Item> <Link style={{ textDecoration: "none", color: "black" }} to="/packages" key={index}>{data}</Link></NavDropdown.Item>
                                 )
-                            }
+                            } */}
+                            <NavDropdown.Item> <Link className="text-uppercase" style={{ textDecoration: "none", color: "black" }} to="/trending-bangladesh-destination" >Trending Destination</Link></NavDropdown.Item>
+                            <NavDropdown.Item> <Link className="text-uppercase" style={{ textDecoration: "none", color: "black" }} to="/most-populer-package" >Populer Package</Link></NavDropdown.Item>
+                            <NavDropdown.Item> <Link className="text-uppercase" style={{ textDecoration: "none", color: "black" }} to="/student-package" >Student Package</Link></NavDropdown.Item>
+                            <NavDropdown.Item> <Link className="text-uppercase" style={{ textDecoration: "none", color: "black" }} to="/couple-package" >Couple Package</Link></NavDropdown.Item>
 
                         </NavDropdown>
-                        <NavDropdown title="NEW OFFERS" id="basic-nav-dropdown">
-                            {
-                                new_offers.map((data, index) =>
-                                    <NavDropdown.Item> <Link style={{ textDecoration: "none", color: "black" }} to="/new_offers" key={index}>{data}</Link></NavDropdown.Item>
-                                )
-                            }
-
-                        </NavDropdown>
+                        <Nav.Link>
+                            <Link style={{ textDecoration: "none" }} to="/new-offers">NEW OFFERS</Link>
+                        </Nav.Link>
                     </Nav>
+
                     <Form className="d-flex">
                         <FormControl
                             type="search"

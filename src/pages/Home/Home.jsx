@@ -11,7 +11,7 @@ import Trending_Bangladesh_Destination from '../Packages/Trending Bangladesh Des
 
 export default function Home() {
     return (
-        <div>
+        <div className="">
             <Imageslider />
             <About/>
             <Trending_Bangladesh_Destination title="Trending Bangladesh Destination" desc="abc" button={true} />
@@ -19,7 +19,7 @@ export default function Home() {
             <Student_Package title="Student Package" desc="abc" button={true} />
             <Couple_Package title="Couple Package" desc="abc" button={true} />
             <Bottom_Banner />
-            <CardSlider />
+            {/* <CardSlider /> */}
             <PauseOnHover />
         </div>
     )
